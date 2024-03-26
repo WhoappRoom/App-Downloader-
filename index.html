@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Apps And Games
+        </title>
+        <style>
+        body {
+          background-color: gray;
+        }
+            #header{
+                position: fixed;
+                top: 0%;
+                left: 0%;
+                right: 0%;
+                height: 50px;
+                background: gray;
+                z-index: 3;
+                box-shadow: 0 0 5px #3b3b3b;
+            }
+            #main{
+                z-index: 1;
+                background: gray;
+                position: absolute;
+                left: 0%;
+                right: 0%;
+                top: 50px;
+            }
+            #myInput {
+              background-position: 10px 12px;
+              background-repeat: no-repeat;
+              box-sizing: border-box;
+              background-color: gray;
+              width: 99%;
+              font-size: 16px;
+              padding: 12px 20px 12px 40px;
+              border: 1px solid #ddd;
+              border-radius:10px;
+              outline: none;
+              color: white;
+              transition: 1s;
+              margin-top: 5px;
+            }
+            #myInput::placeholder{
+              color: white;
+            }
+            #margin:hover{
+              box-shadow: 0 0 3px #0076ff;
+            }
+            #myUL {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+              }
+              #myUL li a {
+                border: 1px solid #28eb02;
+                margin-top: 1px;
+                background-color: #28eb02;
+                padding: 12px;
+                text-decoration: none;
+                font-size: 18px;
+                color: black;
+                border-radius: 10px;
+                display: block;
+              }
+              #myUL li a:hover{
+                background-color: #eee;
+              }
+              li{
+                width: 24%;
+                text-align: center;
+                margin-left: 5px;
+                margin-top: 5px;
+                display: block;
+                margin-right: 5px;
+              }
+              img{
+                width: 150px;
+                height: 150px;
+                transition: 1s;
+                background-color: gray;
+              }
+              #flex{
+                justify-content: space-around;
+                display: flex;
+              }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <input type="search" id="myInput" onkeyup="search()" placeholder="Search Apps...."title="Type in a name">
+        </header>
+        <main id="main">
+            <ul id="myUL">
+              <div id="flex">
+                <li id="whoapp"><img src="https://i.ibb.co/tMZkj3F/Whoapp.jpg"alt="Whoapp" border="0">
+                <a href="https://www.appcreator24.com/app2609448-vag0so">Whoapp</a></li>
+                <li id="app2"><img src="https://i.postimg.cc/1VzwvbQZ/coding.jpg"
+              alt="Code Editor" border="0">
+                <a href="https://www.appcreator24.com/app2937647-jdgqny">Code Editor</a></li>
+                <li id="game"><img src="https://i.ibb.co/28hMX1f/console-ninja-gaming-logo-design-100735-52.jpg"
+              alt="Free Games" border="0">
+                <a href="https://www.appcreator24.com/app2816601-81v7mo">Free Games</a></li>
+              </div>
+              </ul>
+        </main>
+        <script>
+        function search() {
+          var input, filter, ul, li, a, i;
+          input=document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName("li");
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase()
+            .indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+        }
+    }
+}
+</script>
+    </body>
+</html>
